@@ -1,0 +1,29 @@
+dubbo:
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services: spring-cloud-alibaba-dubbo-server
+
+spring:
+  application:
+    name: spring-cloud-alibaba-dubbo-client
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 115.220.10.37:8848
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+  server:
+    port: 8083
+
+server:
+  port: 8080
