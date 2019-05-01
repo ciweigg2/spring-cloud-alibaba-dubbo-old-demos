@@ -14,16 +14,11 @@ spring:
       discovery:
         server-addr: 115.220.10.37:8848
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS
-  server:
-    port: 8083
+info.groupId: @project.groupId@
+info.artifactId: @project.artifactId@
+info.version: @project.version@
+
+management.server.port: 8083
 
 server:
   port: 8080
