@@ -1,0 +1,23 @@
+dubbo:
+  scan:
+    base-packages: com.example.dubbo.scheduled
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
+  consumer:
+    check: false
+
+spring:
+  application:
+    name: app-scheduled
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 115.220.10.37:8848
+  redis:
+    host: 115.220.10.37
+    port: 6379

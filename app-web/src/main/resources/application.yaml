@@ -1,0 +1,20 @@
+dubbo:
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services: app-user
+  consumer:
+    check: false
+
+spring:
+  application:
+    name: app-web
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 115.220.10.37:8848
+
+server:
+  port: 8080

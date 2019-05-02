@@ -4,9 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-cloud-dubbo-server-sample</module>
-        <module>spring-cloud-dubbo-sample-api</module>
-        <module>spring-cloud-dubbo-client-sample</module>
+        <module>app-user</module>
+        <module>app-api</module>
+        <module>app-web</module>
+        <module>app-live</module>
+        <module>app-scheduled</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -15,9 +17,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>spring-cloud-alibaba-dubbo-demos</artifactId>
+    <artifactId>spring-cloud-alibaba-dubbo-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-alibaba-dubbo-demos</name>
+    <name>spring-cloud-alibaba-dubbo-app</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
