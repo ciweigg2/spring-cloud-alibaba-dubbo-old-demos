@@ -2,7 +2,7 @@ dubbo:
   registry:
     address: spring-cloud://localhost
   cloud:
-    subscribed-services: app-user
+    subscribed-services: app-user ## 订阅的服务一定要按照依赖关系启动 正常启动后如果有服务掉线 重新启动后恢复正常
   consumer:
     check: false
 

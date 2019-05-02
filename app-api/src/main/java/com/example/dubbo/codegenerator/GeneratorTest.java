@@ -1,4 +1,4 @@
-package com.example.dubbo.api.codegenerator;
+package com.example.dubbo.codegenerator;
 
 import java.util.Scanner;
 

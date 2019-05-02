@@ -1,9 +1,7 @@
 package com.example.dubbo;
 
-import com.example.dubbo.annotation.RedisLock;
 import com.example.dubbo.api.ScheduledService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

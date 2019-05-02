@@ -18,3 +18,24 @@ spring:
     nacos:
       discovery:
         server-addr: 115.220.10.37:8848
+
+  datasource:
+    url: jdbc:mysql://115.220.10.37:3309/dubbo?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123456
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
