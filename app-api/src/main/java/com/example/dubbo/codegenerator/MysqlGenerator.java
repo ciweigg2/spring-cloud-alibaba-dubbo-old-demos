@@ -23,11 +23,13 @@ import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.mysql.cj.jdbc.Driver;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @Author Ciwei
  * @Date 2019/5/2/002
  */
+@Slf4j
 public class MysqlGenerator extends GeneratorTest {
 
     /**
@@ -67,7 +69,7 @@ public class MysqlGenerator extends GeneratorTest {
                             // 自定义数据库表字段类型转换【可选】
                             @Override
                             public IColumnType processTypeConvert(GlobalConfig globalConfig, String fieldType) {
-                                System.out.println("转换类型：" + fieldType);
+                                log.info("转换类型：" + fieldType);
                                 // if ( fieldType.toLowerCase().contains( "tinyint" ) ) {
                                 //    return DbColumnType.BOOLEAN;
                                 // }

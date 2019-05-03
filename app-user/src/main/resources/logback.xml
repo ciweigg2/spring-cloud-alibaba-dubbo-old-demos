@@ -45,10 +45,38 @@
 		</encoder>
 	</appender>
 
+	<!-- graylog -->
+	<appender name="GELF" class="de.siegmar.logbackgelf.GelfUdpAppender">
+		<graylogHost>192.168.15.59</graylogHost>
+		<graylogPort>12201</graylogPort>
+		<maxChunkSize>508</maxChunkSize>
+		<useCompression>true</useCompression>
+		<encoder class="de.siegmar.logbackgelf.GelfEncoder">
+			<originHost>Ciwei</originHost> <!-- 主机别名 -->
+			<includeRawMessage>false</includeRawMessage>
+			<includeMarker>true</includeMarker>
+			<includeMdcData>true</includeMdcData>
+			<includeCallerData>false</includeCallerData>
+			<includeRootCauseData>false</includeRootCauseData>
+			<includeLevelName>false</includeLevelName>
+			<shortPatternLayout class="ch.qos.logback.classic.PatternLayout">
+				<pattern>%m%nopex</pattern>
+			</shortPatternLayout>
+			<fullPatternLayout class="ch.qos.logback.classic.PatternLayout">
+				<pattern>%m%n</pattern>
+			</fullPatternLayout>
+			<staticField>app_name:app-user</staticField> <!-- 添加自定义字段呀 -->
+			<staticField>os_arch:${os.arch}</staticField>
+			<staticField>os_name:${os.name}</staticField>
+			<staticField>os_version:${os.version}</staticField>
+		</encoder>
+	</appender>
+
 	<logger name="de.codecentric.boot.admin.registry" level="OFF" />
 	<root level="info">
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="SYSTEM_ERROR_FILE" />
 		<appender-ref ref="SYSTEM_INFO_FILE" />
+		<appender-ref ref="GELF" />
 	</root>
 </configuration>

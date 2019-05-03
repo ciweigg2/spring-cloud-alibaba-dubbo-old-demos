@@ -1,11 +1,14 @@
 package com.example.dubbo.codegenerator;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Scanner;
 
 /**
  * @Author Ciwei
  * @Date 2019/5/2/002
  */
+@Slf4j
 public class GeneratorTest {
 
     /**
@@ -19,7 +22,7 @@ public class GeneratorTest {
                         "\n0 = Velocity 引擎" +
                         "\n1 = Freemarker 引擎" +
                         "\n请输入：";
-        System.out.println(help);
+        log.info(help);
         int slt = 0;
         // 现在有输入数据
         if (scanner.hasNext()) {

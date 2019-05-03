@@ -60,6 +60,39 @@ java -javaagent:H:/apache-skywalking-apm-incubating/agent/skywalking-agent.jar=a
 
 其中的`/path/to/agent.config` 代表的是自定义探针配置文件的绝对路径 
 
+> ipfs
+
+* 安装教程：https://ciweigg2.github.io/2019/05/03/ipfs-fen-bu-shi-wen-jian-cun-chu-xi-tong/
+
+![ipfs](docs/images/ipfs.png)
+
+java对接：https://github.com/ipfs/java-ipfs-http-client
+
+Create an IPFS instance with:
+```Java
+IPFS ipfs = new IPFS("/ip4/127.0.0.1/tcp/5001");
+```
+
+To add a file use (the add method returns a list of merklenodes, in this case there is only one element):
+```Java
+NamedStreamable.FileWrapper file = new NamedStreamable.FileWrapper(new File("hello.txt"));
+MerkleNode addResult = ipfs.add(file).get(0);
+```
+
+To add a byte[] use:
+```Java
+NamedStreamable.ByteArrayWrapper file = new NamedStreamable.ByteArrayWrapper("hello.txt", "G'day world! IPFS rocks!".getBytes());
+MerkleNode addResult = ipfs.add(file).get(0);
+```
+
+To get a file use:
+```Java
+Multihash filePointer = Multihash.fromBase58("QmPZ9gcCEpqKTo6aq61g2nXGUhM4iCL3ewB6LDXZCtioEB");
+byte[] fileContents = ipfs.cat(filePointer);
+```
+
+代码中有使用例子的
+
 > 技术栈
 
 * Dubbo Spring Cloud
@@ -68,6 +101,7 @@ java -javaagent:H:/apache-skywalking-apm-incubating/agent/skywalking-agent.jar=a
 * Redis(分布式锁)https://gitee.com/ciweigg/spring-boot-klock-starter.git
 * SkyWalking
 * seata
-* graylog
+* graylog(https://docs.graylog.org/en/3.0/pages/installation/docker.html)
 * Mysql
 * Docker
+* ipfs(https://ciweigg2.github.io/2019/05/03/ipfs-fen-bu-shi-wen-jian-cun-chu-xi-tong/)
