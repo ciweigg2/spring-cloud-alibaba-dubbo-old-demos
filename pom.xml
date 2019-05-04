@@ -9,6 +9,7 @@
         <module>app-web</module>
         <module>app-live</module>
         <module>app-scheduled</module>
+        <module>app-utils</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

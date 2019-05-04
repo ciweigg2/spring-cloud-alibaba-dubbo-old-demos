@@ -1,6 +1,6 @@
 package com.example.dubbo.mybatis.mapper;
 
-import com.example.dubbo.mybatis.entity.User;
+import com.example.dubbo.mybatis.entity.Live;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author Ciwei
  * @since 2019-05-04
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface LiveMapper extends BaseMapper<Live> {
 
 }

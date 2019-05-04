@@ -20,26 +20,26 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class User extends Model<User> {
+public class Live extends Model<Live> {
 
 private static final long serialVersionUID=1L;
 
     /**
-     * 用户id
+     * 直播id
      */
-    @TableId(value = "userId", type = IdType.AUTO)
-    private Integer userId;
+    @TableId(value = "liveId", type = IdType.AUTO)
+    private Integer liveId;
 
     /**
-     * 用户名
+     * 直播名
      */
-    @TableField("userName")
-    private String userName;
+    @TableField("liveName")
+    private String liveName;
 
 
     @Override
     protected Serializable pkVal() {
-        return this.userId;
+        return this.liveId;
     }
 
 }
