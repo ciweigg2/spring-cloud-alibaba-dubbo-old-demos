@@ -4,27 +4,36 @@
 
 ![架构图](docs/images/架构图.png)
 
-> skywalking时间同步和elasticsearch数据持久化
+### skywalking时间同步和elasticsearch数据持久化
 
-* 程序包下载：http://skywalking.apache.org/downloads/
+* java运行的集成程序包下载：http://skywalking.apache.org/downloads/
 
 修改：H:\apache-skywalking-apm-incubating\agent\config\agent.config collector.backend_service地址
 
-* skywalking
-
-时间同步：TZ: 'Asia/Shanghai'
-
-参考：[docker-compose.yml](docs/skywalking/docker-compose.yml)
+* 安装skywalking
 
 需要下载docker依赖：git clone https://github.com/apache/skywalking-docker.git
 
-* elasticsearch
+参考：[docker-compose.yml](docs/skywalking/docker-compose.yml)
+
+每个镜像添加：TZ: 'Asia/Shanghai'
+
+修改elasticsearch添加持久化容器挂载
 
 ```java
-数据持久化
+volumes:
+  - ./elasticsearch/data:/usr/share/elasticsearch/data
+  - ./elasticsearch/logs:/usr/share/elasticsearch/logs
+```
+
+```java
+创建数据持久化文件夹目录并赋予权限
 mkdir elasticsearch/data
 chmod -R 777 elasticsearch
+```
+
 启动skywalking
+```java
 docker-compose up -d
 ```
 

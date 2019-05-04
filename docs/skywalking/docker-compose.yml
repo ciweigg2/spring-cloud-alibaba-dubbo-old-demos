@@ -13,7 +13,6 @@ services:
     volumes:
       - ./elasticsearch/data:/usr/share/elasticsearch/data
       - ./elasticsearch/logs:/usr/share/elasticsearch/logs
-    user: '54321'
   oap:
     image: skywalking/oap:6.0.0-GA
     container_name: oap
