@@ -101,7 +101,7 @@ byte[] fileContents = ipfs.cat(filePointer);
 * Redis(分布式锁)https://gitee.com/ciweigg/spring-boot-klock-starter.git
 * SkyWalking
 * seata
-* graylog(https://docs.graylog.org/en/3.0/pages/installation/docker.html)
+* graylog(https://docs.graylog.org/en/3.0/pages/installation/docker.html)/(https://ciweigg2.github.io/2019/05/04/graylog-fen-bu-shi-ri-zhi/)
 * Mysql
 * Docker
 * ipfs(https://ciweigg2.github.io/2019/05/03/ipfs-fen-bu-shi-wen-jian-cun-chu-xi-tong/)
